@@ -1,0 +1,62 @@
+.hello {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__title {
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    border-right: .15em solid orange;
+    padding-right: 5px;
+    animation:
+      typing 2s steps(30, end),
+      blink-caret 1s step-end infinite;
+  }
+  &__buttons {
+    display: flex;
+    align-items: center;
+  }
+  &__button {
+    border: 1px solid #8c8f9f;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-right: 30px;
+    cursor: pointer;
+    font-size: 23px;
+    min-width: 115px;
+    text-align: center;
+    color: #171923;
+    transition: 0.3s ease-in-out;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      color: #fff;
+      background: #171923;
+      transition: 0.3s ease-in-out;
+    }
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
