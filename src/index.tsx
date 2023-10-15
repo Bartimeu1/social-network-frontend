@@ -5,8 +5,10 @@ import { Provider } from 'react-redux';
 import './index.scss';
 
 import { store } from './store/store';
+
 import HelloPage from './pages/Hello/HelloPage';
 import RegisterPage from './pages/Registration/RegisterPage';
+import AuthPage from './pages/Auth/AuthPage';
 
 const router = createBrowserRouter([
   {
@@ -16,7 +18,11 @@ const router = createBrowserRouter([
   {
     path: '/register',
     element: <RegisterPage />,
-  }
+  },
+  {
+    path: '/auth',
+    element: <AuthPage />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(
