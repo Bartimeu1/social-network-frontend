@@ -13,8 +13,9 @@ import { logOut, setCredentials } from '../features/user/userSlice';
 const baseQuery = fetchBaseQuery({
   baseUrl: BASE_URL,
   credentials: 'same-origin',
-  prepareHeaders: (headers, { getState }) => {
-    const token = (getState() as RootState).user.accessToken;
+  prepareHeaders: (headers) => {
+    const token = localStorage.getItem('accessToken');
+
     if (token) {
       headers.set('authorization', `Bearer: ${token}`);
     }
